@@ -20,6 +20,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
+import static com.example.android.favoritetoys.ToyBox.getToyNames;
+
 public class MainActivity extends AppCompatActivity {
 
     // TODO (1) Declare a TextView variable called mToysListTextView
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ToyBox.getToyNames();
+        String[] toyNames = ToyBox.getToyNames();
         //TODO (6) erase
 
         // TODO (3) Use findViewById to get a reference to the TextView from the layout
@@ -39,5 +41,9 @@ public class MainActivity extends AppCompatActivity {
         // TODO (4) Use the static ToyBox.getToyNames method and store the names in a String array
 
         // TODO (5) Loop through each toy and append the name to the TextView (add \n for spacing)
+
+        for (String toyName : toyNames){
+            mToysListTextView.append(toyName + toyNames + "\n\n\n");
+        }
     }
 }
